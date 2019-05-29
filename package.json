@@ -6,6 +6,8 @@
   "author": "Rakibul Hasan <xenax.rakibul@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
     "lint": "eslint '**/*.js'",
     "lint:fix": "prettier-eslint '**/*.js' --write"
   },
@@ -16,7 +18,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn run lint:fix",
+      "yarn lint:fix",
       "git add"
     ]
   },
@@ -31,6 +33,9 @@
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "prettier-eslint": "^8.8.2",
-    "prettier-eslint-cli": "^4.7.1"
+    "prettier-eslint-cli": "^4.7.1",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.12.4",
+    "rollup-plugin-node-resolve": "^5.0.0"
   }
 }
